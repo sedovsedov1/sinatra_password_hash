@@ -1,0 +1,19 @@
+  <h1>Home</h1>
+  <p>Hello, <%= current_user.username %>.</p>
+  <form action="/sign_out" method="POST">
+    <input type="submit" value="Sign Out" />
+  </form>
+
+  <p>There are <%= USERS.size %> users registered:</p>
+  <ul>
+    <% USERS.each do |user| %>
+      <li><%= user.username %></li>
+    <% end %>
+  </ul>
+
+  <h2>Create New User</h2>
+  <form action="/create_user" method="POST">
+    <input name="username" placeholder="Username" />
+    <input name="password" placeholder="Password" />
+    <input type="submit" value="Create User" />
+  </form>
